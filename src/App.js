@@ -142,3 +142,14 @@ class App extends Component {
 }
 
 export default App;
+/* TODO:
+    * Add  PROPTYPES to components
+    * to check if sizes are availiable https://www.flickr.com/groups/51035612836@N01/discuss/72157672683298161/ 
+    * When creating default markers array instead of the iterator use TITLE for ID.  
+    * inside the infowindow:
+        * show a ✓ symbol next each photo thats already plotted on the map
+        * disable the plot image button if the image is already plotted on the map
+        * add a remove marker button (for the photos that are plotted)
+        * Display  metadata about the photo: user, date, name, other tags?)
+    * Create a modal (gallery view) that can host all the photographs from a landmark at once. 
+*/

@@ -274,20 +274,3 @@ class Map extends React.Component {
 }
 
 export default Map;
-
-/*NOT TODO:
-    *** add  README && explain known issues:
-        * Some photos are plotted on 'out of bounds'
-        * why some pics can be unavailiable (https://farm4.staticflickr.com/3464/3837880020_a22e7bdd89.jpg )
-    * clean up CSS/JS
-    --------------------
-//TODO:
-    * Add  PROPTYPES to components
-    * to check if sizes are availiable https://www.flickr.com/groups/51035612836@N01/discuss/72157672683298161/ 
-    * When creating default markers array instead of the iterator use TITLE for ID.  
-    * inside the infowindow:
-        * show a ✓ symbol next each photo thats already plotted on the map
-        * disable the plot image button if the image is already plotted on the map
-        * add a remove marker button (for the photos that are plotted)
-        * Display  metadata about the photo: user, date, name, other tags?)
-*/
