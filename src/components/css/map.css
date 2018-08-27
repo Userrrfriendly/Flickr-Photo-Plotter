@@ -1,0 +1,47 @@
+/* Map */
+#map-container {
+    max-height: 100vh;
+    flex-grow: 1;
+    min-width: 59vw;
+    border: 1px solid black;
+    position: relative;
+    overflow: hidden;
+  }
+
+/* Info Window */
+.info-window {
+    display: flex;
+    flex-flow: column;
+  }
+
+.info-window section {
+    display: flex;
+    flex-flow: column;
+}
+
+.info-window h4 {
+    margin: 0;
+}
+
+.info-window h4 p {
+    margin: 0;
+    font-style: italic;
+    font-weight: normal;
+}
+  
+.marker-intro {
+    margin: 0.25rem 0;
+}
+
+.wiki-ref {
+    margin: 0 0 0.25rem 0;
+    font-style: italic;
+}
+
+#image-info {
+    align-self: center;
+}
+ 
+#add-geo-tag {
+    height: 40px;
+}
