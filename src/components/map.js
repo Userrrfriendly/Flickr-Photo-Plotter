@@ -11,12 +11,23 @@ import './css/map.css';
 */
 class Map extends React.Component {
     state = {
-        activeMarker: null
+        activeMarker: null,
     }
 
     componentDidMount() {
         window.initMap = this.initMap;
+        this.handleGoogleMapsError();
         this.createGoogleApiScript();
+    }
+
+    handleGoogleMapsError = ()=>{
+        // google maps method for handling authentication errors
+        // more on: https://developers.google.com/maps/documentation/javascript/events#auth-errors
+        window.gm_authFailure = ()=> { 
+            this.props.handleGoogleMapsError();
+            document.querySelector('.gm-err-title').innerHTML = 'Oops it seems there was a problem loading Google Maps!';
+            document.querySelector('.gm-err-message').innerHTML = 'Failed to authenticate Google Maps, please try again later';
+        };
     }
 
     createGoogleApiScript = ()=> {
@@ -32,6 +43,7 @@ class Map extends React.Component {
     }
 
     initMap = ()=> {
+
         console.log('Google Maps API Loaded...');
         window.map = new window.google.maps.Map(document.getElementById('map-container'), {
             center: {lat: 36.436178, lng: 27.74009},
@@ -186,6 +198,7 @@ class Map extends React.Component {
                         const alt = marker.title +', ' + photoTitle;
                         return `<img 
                                 id="image-info" 
+                                tabindex="0"
                                 data-img-id=${marker.urls.thumbNail[currentRandomImage][1]} 
                                 alt="${alt}" src=${marker.urls.thumbNail[currentRandomImage][0]}>
                                 <button id="add-geo-tag" 

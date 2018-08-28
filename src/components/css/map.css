@@ -40,8 +40,36 @@
 
 #image-info {
     align-self: center;
+    margin: 3px;
+    
 }
- 
+
+#image-info:focus {
+    align-self: center;
+    outline: #65a9d7 1px solid;
+    -webkit-box-shadow: 0px 0px 5px 1px rgba(27,12,237,1);
+    -moz-box-shadow: 0px 0px 5px 1px rgba(27,12,237,1);
+    box-shadow: 0px 0px 5px 1px rgba(27,12,237,1);  
+}
+
 #add-geo-tag {
     height: 40px;
+    margin: 3px;
+}
+
+#add-geo-tag:focus {
+    outline: #65a9d7 1px solid;
+    -webkit-box-shadow: 0px 0px 5px 1px rgba(27,12,237,1);
+    -moz-box-shadow: 0px 0px 5px 1px rgba(27,12,237,1);
+    box-shadow: 0px 0px 5px 1px rgba(27,12,237,1);   
+}
+
+/* google maps error messages */
+.gm-err-title {
+    color: red;
+}
+
+.gm-err-message {
+    color: red;
+    font-size: 1rem;
 }

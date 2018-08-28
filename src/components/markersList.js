@@ -34,12 +34,15 @@ class MarkersList extends React.Component {
     }
 
     markerClick = (e) => {
-        const marker = this.props.passAppState()[0].defaultMarkers.filter((m)=>{
-            return m.title === e.target.id;
-        });
-        window.google.maps.event.trigger(marker[0],'click');
+        if (this.props.passAppState()[0].googleMapsError) {
+            alert('it seems that google maps API is not loaded correctly...cannot display markers without google maps')
+        } else {
+            const marker = this.props.passAppState()[0].defaultMarkers.filter((m)=>{
+                return m.title === e.target.id;
+            });
+            window.google.maps.event.trigger(marker[0],'click');
+        }
     }
-
 
     render () {
         let markers = this.defaultMarkers().filter((marker)=> {

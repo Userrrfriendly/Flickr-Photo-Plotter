@@ -28,7 +28,8 @@ class App extends Component {
     ],
     showModalImage: false,
     modalImageUrl: '',
-    modalImgAlt: ''
+    modalImgAlt: '',
+    googleMapsError: false
   }
 
   getDefaultLocations = ()=> {
@@ -51,6 +52,12 @@ class App extends Component {
           return m;
       })
     }
+    })
+  }
+
+  handleGoogleMapsError = ()=>{
+    this.setState({
+      googleMapsError:true
     })
   }
 
@@ -128,6 +135,7 @@ class App extends Component {
             changeStateAll={this.changeStateAll}
           />
           <Map
+            handleGoogleMapsError={this.handleGoogleMapsError}
             imageClick={this.imageClick}
             getDefaultLocations={this.getDefaultLocations}
             plotPhotoOnMap={this.plotPhotoOnMap}
