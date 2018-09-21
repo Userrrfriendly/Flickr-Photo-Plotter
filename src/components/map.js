@@ -1,6 +1,7 @@
 import React from 'react';
 import * as FlickrAPI from '../flickrAPI';
 import './css/map.css';
+import PhotoMarker_20 from '../images/PhotoMarker_20.svg';
 
 /*When the Map component mounts the following happen:
     * the google maps callback is 'tied' to the window obj (componentDidMount())
@@ -253,7 +254,8 @@ class Map extends React.Component {
     addGeoTagMarker = (photo_id,srcUrl,title)=> {
         const mapInstance = this;
         const customMarker = {
-            url: 'PhotoMarker_20.svg',
+            // url: 'PhotoMarker_20.svg', //should work both on production && development but importing the image seems to be the best practice...
+            url: PhotoMarker_20,
             scale: 0.1
         };
         FlickrAPI.getPhotoLocation(photo_id).then((res)=>{
